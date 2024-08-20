@@ -1,0 +1,78 @@
+# Code Bar Generator
+
+## Overview
+
+The Code Bar Generator is a web application that allows users to create barcodes from text input. It utilizes the JsBarcode library for barcode generation and html2pdf.js for exporting the generated barcode as a PDF. The application features a user-friendly interface built with Tailwind CSS.
+
+## Features
+
+- Generate barcodes from user-input text.
+- Validate input length (1 to 50 characters).
+- Download the generated barcode as a PDF.
+- Responsive design with Tailwind CSS.
+
+## Technologies Used
+
+- **HTML**: Structure of the web application.
+- **Tailwind CSS**: Styling framework for responsive and modern design.
+- **JavaScript**: Logic for barcode generation and PDF creation.
+- **JsBarcode**: Library for generating barcodes.
+- **html2pdf.js**: Library for exporting HTML content to PDF.
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have a web browser to run the HTML file.
+
+### Installation
+
+ Clone the repository : https://github.com/yannickm260/CodeBarGenerator.git
+
+
+### Usage
+
+1. Open the index.html file in your web browser.
+2. Enter text (1 to 50 characters) in the input field.
+3. Click the "Generate" button to create the barcode.
+4. If the input is valid, the barcode will be displayed, and a button will appear to download it as a PDF.
+5. If the input is invalid, an error message will be shown.
+
+## Code Explanation
+
+- **HTML Structure**:
+  - The main structure consists of an input field for text, a button to generate the barcode, and a display area for the barcode image.
+
+- **JavaScript Logic**:
+  - The script checks the input length and generates a barcode using JsBarcode.
+  - It also handles PDF generation using html2pdf.js.
+
+### Example of JavaScript Logic
+
+boutton_code_bar.onclick = function(){
+    if(text.value.length > 0){
+        if(text.value.length < 50){
+            box.innerHTML = "<svg id='barcode'></svg>"
+            JsBarcode("#barcode", text.value);
+            // Additional logic...
+        } else {
+            // Handle too long input...
+        }
+    } else {
+        // Handle empty input...
+    }
+}
+
+
+## Contribution
+
+Feel free to fork the repository and make contributions. If you have suggestions or improvements, please open an issue or submit a pull request.
+
+
+## Acknowledgments
+
+- Thanks to [Tailwind CSS](https://tailwindcss.com/) for their excellent styling framework.
+- Thanks to [JsBarcode](https://github.com/lindell/JsBarcode) for barcode generation.
+- Thanks to [html2pdf.js](https://github.com/ephub/html2pdf.js) for PDF generation capabilities.
+
+Happy coding!
